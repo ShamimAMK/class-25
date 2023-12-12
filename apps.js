@@ -83,25 +83,85 @@
 
 //find
 
-const fruits = ["apple", "mango", "banana", "orange"];
+// const fruits = ["apple", "mango", "banana", "orange"];
 
-const fruit = fruits.find((fruit, index, arr) => fruit.startsWith("b"));
+// const fruit = fruits.find((fruit, index, arr) => fruit.startsWith("b"));
 
-console.log(fruit);
+// console.log(fruit);
 
-const fruitIndex = fruits.findIndex((fruit, index, arr) =>
-  fruit.startsWith("a")
-);
+// const fruitIndex = fruits.findIndex((fruit, index, arr) =>
+//   fruit.startsWith("a")
+// );
 
-console.log(fruitIndex);
+// console.log(fruitIndex);
 
-// some
-const friends = ["mimi", "mim", "tumpa", "rima"];
-const output = friends.some((frnd, index, arr) => frnd.endsWith("a"));
+// // some
+// const friends = ["mimi", "mim", "tumpa", "rima"];
+// const output = friends.some((frnd, index, arr) => frnd.endsWith("a"));
 
-const output2 = friends.every((frnd, index, arr) => frnd.endsWith("u"));
+// const output2 = friends.every((frnd, index, arr) => frnd.endsWith("u"));
 
-// console.log(output);
-// console.log(output2);
+// // console.log(output);
+// // console.log(output2);
+
+// //chaining method
+// // const newArr = [2, 4, 6, 8, 10, 11, 5];
+// // let sum = 0;
+// // const newNums = newArr
+// //   .map((num) => num * 2)
+// //   .filter((num) => num > 10)
+// //   .forEach((num) => (sum += num));
+
+// // console.log(sum);
+
+// // reduce
+// const numbers = [12, 15, 112, 122, 1132, 15, 13, 16];
+// const sum3 = numbers.reduce((sum, num) => (sum += num));
+
+// // console.log(sum3);
+
+// const product2 = numbers.reduce((product2, num) => (product2 *= num));
+
+// // console.log(product2);
+
+// //reduce right
+
+// const produc32 = numbers.reduceRight((product32, num) => (product32 *= num));
+
+// console.log(produc32);
+
+// const foods = ["biriani", "pasta", "chilliBurger", "noddle"];
+
+// // foods.sort();
+
+// // const srtFood = foods.sort((a, b) => b.localeCompare(a));
+// const srtFood = foods.sort((a, b) => a.localeCompare(b));
+
+// // console.log(foods);
+// console.log(foods);
+
+const shoppingCart = [
+  { id: 1, title: "Shirt", price: 1000, rating: 4.7 },
+  { id: 1, title: "T-Shirt", price: 350, rating: 4.6 },
+  { id: 1, title: "Pant", price: 1200, rating: 4.0 },
+  { id: 1, title: "Tops", price: 560, rating: 3.7 },
+  { id: 1, title: "Shoe", price: 1500, rating: 4.9 },
+  { id: 1, title: "Skirt", price: 450, rating: 5.0 },
+];
+
+// const sortedCart = shoppingCart.sort((a, b) => b.price - a.price);
+// console.log(sortedCart);
+const sortedCart = shoppingCart.sort((a, b) => a.price - b.price);
+// console.log(sortedCart);
 
 //flat
+const nestedArr = [1, 2, 3, [3, 4, [5, 6], 5, 7], 9, 8, 7];
+// const flatedArr = nestedArr.flat();
+// const flatedArr = nestedArr.flat(2);
+// const flatedArr = nestedArr.flat(3);
+
+const flatedArr = nestedArr
+  .flat(3)
+  .flatMap((num, index, arr) => (num = num + 2));
+
+console.log(flatedArr);
